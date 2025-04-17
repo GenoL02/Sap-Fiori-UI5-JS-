@@ -2,11 +2,13 @@
     controllerName="sap.ui.demo.walkthrough.controller.Detail"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:wt="sap.ui.demo.walkthrough.control">
+    xmlns:wt="sap.ui.demo.walkthrough.control"
+>
     <Page
         title="{i18n>detailPageTitle}"
         showNavButton="true"
-        navButtonPress=".onNavBack">
+        navButtonPress=".onNavBack"
+    >
         <ObjectHeader
             responsive="false"
             fullScreenOptimized="true"
@@ -19,11 +21,15 @@
                 }"
             numberUnit="{view>/currency}"
             intro="{invoice>ShipperName}"
-            title="{invoice>ProductName}">
+            title="{invoice>ProductName}"
+        >
             <attributes>
-                <ObjectAttribute title="{i18n>quantityTitle}" text="{invoice>Quantity}">
-                </ObjectAttribute>
-                <ObjectAttribute title="{i18n>dateTitle}"
+                <ObjectAttribute
+                    title="{i18n>quantityTitle}"
+                    text="{invoice>Quantity}"
+                />
+                <ObjectAttribute
+                    title="{i18n>dateTitle}"
                     text="{
                     path: 'invoice>ShippedDate',
                     type: 'sap.ui.model.type.DateTime',
@@ -33,9 +39,14 @@
                             pattern: 'yyyy-MM-ddTHH:mm:ss'
                         }
                     }
-                }" />
+                }"
+                />
             </attributes>
         </ObjectHeader>
-        <wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange" />
+        <wt:ProductRating
+            id="rating"
+            class="sapUiSmallMarginBeginEnd"
+            change=".onRatingChange"
+        />
     </Page>
 </mvc:View>
